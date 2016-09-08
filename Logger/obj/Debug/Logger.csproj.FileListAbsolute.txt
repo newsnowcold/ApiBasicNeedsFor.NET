@@ -1,0 +1,5 @@
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\Logger\bin\Debug\Logger.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\Logger\bin\Debug\Logger.pdb
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\Logger\obj\Debug\Logger.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\Logger\obj\Debug\Logger.pdb

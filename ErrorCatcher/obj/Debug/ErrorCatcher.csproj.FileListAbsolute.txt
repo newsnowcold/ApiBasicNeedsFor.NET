@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\ErrorCatcher.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\ErrorCatcher.pdb
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\Logger.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\System.Web.Http.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\Logger.pdb
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\System.Web.Http.xml
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\obj\Debug\ErrorCatcher.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\obj\Debug\ErrorCatcher.dll
+C:\Users\User\Desktop\Darrel files\Projects\WebApplication3\ErrorCatcher\obj\Debug\ErrorCatcher.pdb
