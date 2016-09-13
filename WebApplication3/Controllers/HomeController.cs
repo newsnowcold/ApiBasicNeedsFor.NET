@@ -1,4 +1,5 @@
-﻿using Logger;
+﻿using ErrorCatcher.ApiFilters;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace WebApplication3.Controllers
 {
+    [CustomApiHandler]
     public class HomeController : Controller
     {
         private LoggerService _loggerService;
@@ -19,7 +21,7 @@ namespace WebApplication3.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            
+            throw new Exception();
             return View(this._loggerService.Log("Home page"));
         }
     }

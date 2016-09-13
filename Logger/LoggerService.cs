@@ -43,10 +43,11 @@ namespace Logger
 
         public string Log(string message)
         {
+            string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
             string fileName = (this._logFileName != "") ?
-                this._logFileName : DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
+                this._logFileName : utcDateString;
 
-            string filePath = $"{this._logUrl}{fileName}.txt";
+            string filePath = $"{this._logUrl}/{utcDateString}/{fileName}.txt";
 
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
             file.Directory.Create();
@@ -60,10 +61,11 @@ namespace Logger
 
         public string Log(string message, string logId)
         {
+            string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
             string fileName = (this._logFileName != "") ?
-               this._logFileName : DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
+               this._logFileName : utcDateString;
 
-            string filePath = $"{this._logUrl}{fileName}.txt";
+            string filePath = $"{this._logUrl}/{utcDateString}/{fileName}.txt";
 
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
             file.Directory.Create();
@@ -75,10 +77,11 @@ namespace Logger
 
         public string LogWithFileName(string message, string logFileName)
         {
-            string fileName = (logFileName != "") ?
-               logFileName : DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
+            string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
+            string fileName = (this._logFileName != "") ?
+               this._logFileName : utcDateString;
 
-            string filePath = $"{this._logUrl}{fileName}.txt";
+            string filePath = $"{this._logUrl}/{utcDateString}/{logFileName}.txt";
 
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
             file.Directory.Create();
@@ -92,10 +95,11 @@ namespace Logger
 
         public string LogWithFileName(string message, string logFileName, string logId)
         {
-            string fileName = (logFileName != "") ?
-                logFileName : DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
+            string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
+            string fileName = (this._logFileName != "") ?
+               this._logFileName : utcDateString;
 
-            string filePath = $"{this._logUrl}{fileName}.txt";
+            string filePath = $"{this._logUrl}/{utcDateString}/{logFileName}.txt";
 
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
             file.Directory.Create();
