@@ -11,15 +11,8 @@ using ErrorCatcher.Models;
 
 namespace ErrorCatcher.Methods
 {
-    public class SendCustomError : ISendCustomError
+    public class SendCustomResponse : ISendCustomError
     {
-        /// <summary>
-        /// Send a custom response message
-        /// </summary>
-        /// <param name="request">current request context</param>
-        /// <param name="statusCode">the status code of the response message</param>
-        /// <param name="message">content of the response</param>
-        /// <returns></returns>
         public HttpResponseMessage ReturnResponse(HttpRequestMessage request, HttpStatusCode statusCode, string message)
         {
             var errorResponse = new ApiErrorViewModel();
@@ -29,14 +22,6 @@ namespace ErrorCatcher.Methods
             return request.CreateResponse(statusCode, errorResponse);
         }
 
-        /// <summary>
-        /// Send a custom response message with a specific LogId
-        /// </summary>
-        /// <param name="request">current request context</param>
-        /// <param name="statusCode">the status code of the response message</param>
-        /// <param name="message">content of the response</param>
-        /// <param name="logId">custom log id</param>
-        /// <returns></returns>
         public HttpResponseMessage ReturnResponse(HttpRequestMessage request, HttpStatusCode statusCode, string message, string logId)
         {
             var errorResponse = new ApiErrorViewModel();
@@ -47,14 +32,6 @@ namespace ErrorCatcher.Methods
             return request.CreateResponse(statusCode, errorResponse);
         }
 
-        /// <summary>
-        /// Send a custom response message with a list of errors
-        /// </summary>
-        /// <param name="request">current request context</param>
-        /// <param name="statusCode">response status code</param>
-        /// <param name="message">response content</param>
-        /// <param name="errors">list of errors</param>
-        /// <returns></returns>
         public HttpResponseMessage ReturnResponse(HttpRequestMessage request, HttpStatusCode statusCode, string message, List<Error> errors)
         {
             var errorResponse = new ApiErrorViewModel();
@@ -64,16 +41,7 @@ namespace ErrorCatcher.Methods
 
             return request.CreateResponse(statusCode, errorResponse);
         }
-
-        /// <summary>
-        /// Send a custom response message with a list of errors together with a specific log Id
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="statusCode"></param>
-        /// <param name="message"></param>
-        /// <param name="logId"></param>
-        /// <param name="errors"></param>
-        /// <returns></returns>
+        
         public HttpResponseMessage ReturnResponse(HttpRequestMessage request, HttpStatusCode statusCode, string message, string logId, List<Error> errors)
         {
             var errorResponse = new ApiErrorViewModel();
