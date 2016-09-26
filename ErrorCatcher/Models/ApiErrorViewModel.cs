@@ -32,6 +32,6 @@ namespace ErrorCatcher.Models
         public string Reason { get; set; }
         public string Message { get; set; }
         public string LocationType { get; set; }
-        public string location { get; set; }
+        public string Location { get; set; }
     }
 }
