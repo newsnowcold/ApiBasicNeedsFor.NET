@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace WebApplication3.Models
 {
     public class TestModel
-    {
+    {        
         public string Param1 { get; set; }
+
+        [Phone]
         public int Param2 { get; set; }
+
+        [EmailAddress]
         public bool Param3 { get; set; }
+
+        [Required]
         public List<SampleListItem> Param4 { get; set; }
     }
 
