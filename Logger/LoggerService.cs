@@ -13,6 +13,10 @@ namespace Logger
         private string _logUrl;
         private string _logFileName;
 
+        /// <summary>
+        /// Put all logs under a single file path
+        /// </summary>
+        /// <param name="logUrl">folder path</param>
         public LoggerService(string logUrl)
         {
             if (logUrl.EndsWith(@"/"))
@@ -27,6 +31,11 @@ namespace Logger
             this._logFileName = "";
         }
 
+        /// <summary>
+        /// Use this if you want all your logs will be inserted to a single file
+        /// </summary>
+        /// <param name="logUrl">file path</param>
+        /// <param name="logFileName">file name</param>
         public LoggerService(string logUrl, string logFileName)
         {
             if (logUrl.EndsWith(@"\"))
@@ -41,6 +50,11 @@ namespace Logger
             this._logFileName = logFileName;
         }
 
+        /// <summary>
+        /// If you just wanted to log an event
+        /// </summary>
+        /// <param name="message">log content</param>
+        /// <returns></returns>
         public string Log(string message)
         {
             string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
@@ -59,6 +73,12 @@ namespace Logger
             return $"log identifier - {logTracker}";
         }
 
+        /// <summary>
+        /// If you want to log an event with a specific logId
+        /// </summary>
+        /// <param name="message">log content</param>
+        /// <param name="logId">log Id</param>
+        /// <returns></returns>
         public string Log(string message, string logId)
         {
             string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
@@ -75,6 +95,12 @@ namespace Logger
             return $"log identifier - {logId}";
         }
 
+        /// <summary>
+        /// If you want to log an e vent with a specific filename
+        /// </summary>
+        /// <param name="message">log content</param>
+        /// <param name="logFileName">log Id</param>
+        /// <returns></returns>
         public string LogWithFileName(string message, string logFileName)
         {
             string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
@@ -93,6 +119,13 @@ namespace Logger
             return $"log identifier - {logTracker}";
         }
 
+        /// <summary>
+        /// If you want to log an event with a specific file name and specific log Id
+        /// </summary>
+        /// <param name="message">log conent</param>
+        /// <param name="logFileName">log filename</param>
+        /// <param name="logId">log Id</param>
+        /// <returns></returns>
         public string LogWithFileName(string message, string logFileName, string logId)
         {
             string utcDateString = DateTime.UtcNow.ToString("dddd, MMMM d, yyyy");
@@ -108,7 +141,6 @@ namespace Logger
 
             return $"log identifier - {logId}";
         }
-
        
     }
 }
