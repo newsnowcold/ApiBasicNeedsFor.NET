@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{2A666149-CCE4-4411-96D0-008D0B4D6D7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitialCodeDrop", "WebApplication3\InitialCodeDrop.csproj", "{2A666149-CCE4-4411-96D0-008D0B4D6D7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{91CB33D0-6487-40E1-AD0A-D6B0EAB4BBB0}"
 EndProject
