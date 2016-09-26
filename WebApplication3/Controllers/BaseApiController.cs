@@ -22,12 +22,18 @@ namespace WebApplication3.Controllers
 
             foreach (var item in modelState)
             {
-                errors.Add(new Error()
+                foreach (var error in item.Value.Errors)
                 {
-                    Message = "The request is invalid",
-                    Reason = $"[{item.Key}] - {item.Value}",
-                    Domain = Request.RequestUri.AbsoluteUri                    
-                });
+                    string errorMessage = "The request is invalid";
+                    string errorReason = error.Exception?.Message ?? error.ErrorMessage;
+
+                    errors.Add(new Error()
+                    {
+                        Message = errorMessage,
+                        Reason = $"[{item.Key}] - {errorReason}",
+                        Domain = Request.RequestUri.AbsoluteUri
+                    });
+                }               
             }
 
             return customResponseMsgService

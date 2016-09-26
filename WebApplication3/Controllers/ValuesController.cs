@@ -14,7 +14,11 @@ namespace WebApplication3.Controllers
     [CustomApiHandler]
     public class ValuesController : BaseApiController
     {       
-
+        /// <summary>
+        /// A test api controller
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/values/test")]
         public HttpResponseMessage Test(TestModel model)
