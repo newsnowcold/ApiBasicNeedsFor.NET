@@ -62,7 +62,6 @@
     <Compile Include="Enum\ErrorTypes.cs" />
     <Compile Include="Interface\ISendCustomError.cs" />
     <Compile Include="Methods\SendCustomError.cs" />
-    <Compile Include="Models\ApiErrorModel.cs" />
     <Compile Include="Models\ApiErrorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

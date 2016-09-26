@@ -122,7 +122,7 @@ namespace ErrorCatcher.ApiFilters
         {
             get
             {
-                return ConfigurationManager.AppSettings["LogsUrl"] ?? @"C:\";
+                return ConfigurationManager.AppSettings["LogsUrl"] ?? @"C:\ApiLogs";
             }
         }
 

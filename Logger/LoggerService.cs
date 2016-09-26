@@ -54,7 +54,7 @@ namespace Logger
 
             string logTracker = Guid.NewGuid().ToString();
 
-            File.AppendAllText(filePath, $"[{logTracker}] - {DateTime.UtcNow.TimeOfDay} || {message} {Environment.NewLine}");
+            File.AppendAllText(filePath, $" ******** [{logTracker}] - {DateTime.UtcNow.TimeOfDay} ******** {Environment.NewLine} {message} {Environment.NewLine}");
 
             return $"log identifier - {logTracker}";
         }
@@ -70,7 +70,7 @@ namespace Logger
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
             file.Directory.Create();
 
-            File.AppendAllText(filePath, $"[{logId}] - {DateTime.UtcNow.TimeOfDay} || {message} {Environment.NewLine}");
+            File.AppendAllText(filePath, $" ******** [{logId}] - {DateTime.UtcNow.TimeOfDay} ******** {Environment.NewLine} {message} {Environment.NewLine}");
 
             return $"log identifier - {logId}";
         }
@@ -88,7 +88,7 @@ namespace Logger
 
             string logTracker = Guid.NewGuid().ToString();
 
-            File.AppendAllText(filePath, $"[{logTracker}] - {DateTime.UtcNow.TimeOfDay} || {message} {Environment.NewLine}");
+            File.AppendAllText(filePath, $" ******** [{logTracker}] - {DateTime.UtcNow.TimeOfDay} ******** {Environment.NewLine} {message} {Environment.NewLine}");
 
             return $"log identifier - {logTracker}";
         }
@@ -104,7 +104,7 @@ namespace Logger
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
             file.Directory.Create();
 
-            File.AppendAllText(filePath, $"[{logId}] - {DateTime.UtcNow.TimeOfDay} || {message} {Environment.NewLine}");
+            File.AppendAllText(filePath, $" ******** [{logId}] - {DateTime.UtcNow.TimeOfDay} ******** {Environment.NewLine} {message} {Environment.NewLine}");
 
             return $"log identifier - {logId}";
         }
