@@ -14,6 +14,8 @@ using System.Web.Http;
 using System.Web.Http.Filters;
 using System.Configuration;
 using Newtonsoft.Json.Linq;
+using ErrorCatcher.Helper;
+using System.Web.Script.Serialization;
 
 namespace ErrorCatcher.ApiFilters
 {
@@ -25,6 +27,8 @@ namespace ErrorCatcher.ApiFilters
 
             var errorResponse = new ApiErrorViewModel();
 
+            var arguments = actionExecutedContext.ActionContext.ActionArguments;
+
             Error error = new Error()
             {
                 Domain = this.GetDomain(actionExecutedContext.Request),
@@ -35,7 +39,7 @@ namespace ErrorCatcher.ApiFilters
             var logString = GetStringToLog(actionExecutedContext);
 
             Task.Run(() => logger
-                            .LogWithFileName(logString, 
+                            .LogWithFileName(logString,
                                              errorResponse.Id,
                                              errorResponse.Id));
 
@@ -52,11 +56,17 @@ namespace ErrorCatcher.ApiFilters
         private string GetStringToLog(HttpActionExecutedContext request)
         {
             StringBuilder logString = new StringBuilder();
+            WebApiRequestHelper webApiRequestHelper = new WebApiRequestHelper();
+            JavaScriptSerializer js = new JavaScriptSerializer();
 
-            Task<string> content = request.Request.Content.ReadAsStringAsync();
-            string body = JsonConvert.SerializeObject(content.Result)
-                .Replace(@"\r\n", "")
-                .Replace(@"\", "");
+
+            string body = webApiRequestHelper.GetBodyFromRequest(request);
+
+            List<KeyValuePair<string, string>> headers = webApiRequestHelper.GetHeadersFromRequest(request);            
+            string stringHeader = js.Serialize(headers);
+
+            var queryStrings = webApiRequestHelper.GetQueryStringFromRequest(request);
+            string stringQryStrings = js.Serialize(queryStrings);
 
             string user = request.ActionContext.RequestContext.Principal.Identity.Name;
             var ctrl = request.ActionContext.ControllerContext.ControllerDescriptor;
@@ -69,8 +79,10 @@ namespace ErrorCatcher.ApiFilters
             logString.Append($"********************{System.Environment.NewLine}");
             logString.Append($"User: {user}{System.Environment.NewLine}");
             logString.Append($"Url: {request.Request.RequestUri.AbsoluteUri}{System.Environment.NewLine}");
-            logString.Append($"Method: {request.Request.Method}{System.Environment.NewLine}");
-            logString.Append($"Body content: {System.Environment.NewLine} {body}{System.Environment.NewLine}");
+            logString.Append($"Method: {request.Request.Method}{System.Environment.NewLine}{System.Environment.NewLine}");
+            logString.Append($"Body content: {System.Environment.NewLine} {body}{System.Environment.NewLine}{System.Environment.NewLine}");
+            logString.Append($"Headers: {System.Environment.NewLine}{stringHeader}{System.Environment.NewLine}{System.Environment.NewLine}");
+            logString.Append($"Query strings: {System.Environment.NewLine}{stringQryStrings}{System.Environment.NewLine}{System.Environment.NewLine}");
 
             logString.Append(System.Environment.NewLine);
             logString.Append(System.Environment.NewLine);
@@ -88,7 +100,7 @@ namespace ErrorCatcher.ApiFilters
             logString.Append(this.InnerExceptionExtractor(request.Exception));
 
             return logString.ToString();
-        }
+        }      
 
         private string PropertiesExtractor(IDictionary<object, object> properties)
         {

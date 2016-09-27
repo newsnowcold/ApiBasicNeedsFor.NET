@@ -20,9 +20,11 @@ namespace WebApplication3.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("api/values/test")]
-        public HttpResponseMessage Test(TestModel model)
+        [Route("api/values/test/{id}")]
+        public HttpResponseMessage Test(TestModel model, int id)
         {
+            throw new Exception();
+
             if (!ModelState.IsValid)
             {
                 return this.InvalidModelState(ModelState);

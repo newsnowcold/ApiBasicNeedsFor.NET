@@ -11,7 +11,6 @@ namespace WebApplication3.Models
         [EmailAddress]
         public string Param1 { get; set; }
 
-        [Phone]
         public int Param2 { get; set; }
         
         public bool Param3 { get; set; }
